@@ -1,0 +1,1659 @@
+/* =========================================================
+   RESET
+========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #080808;
+    color: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+    overflow-x: hidden;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+button,
+input,
+textarea {
+    font-family: inherit;
+}
+
+:root {
+    --red: #ed1c2e;
+    --red-dark: #b80f1e;
+    --white: #fff;
+    --text: #999;
+    --dark: #080808;
+    --card: #101010;
+}
+
+
+/* =========================================================
+   CURSOR
+========================================================= */
+
+.cursor-glow {
+    position: fixed;
+    width: 280px;
+    height: 280px;
+    border-radius: 50%;
+    background: rgba(237, 28, 46, .08);
+    filter: blur(80px);
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+    z-index: 999;
+}
+
+
+/* =========================================================
+   NAVBAR
+========================================================= */
+
+#header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 500;
+    background: rgba(8, 8, 8, .88);
+    backdrop-filter: blur(18px);
+    border-bottom: 1px solid rgba(255, 255, 255, .07);
+}
+
+.navbar {
+    width: min(1250px, 92%);
+    height: 78px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    font-size: 25px;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+.logo span,
+.footer-logo span {
+    color: var(--red);
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 38px;
+}
+
+.nav-links a {
+    color: #aaa;
+    font-size: 14px;
+    transition: .3s;
+}
+
+.nav-links a:hover {
+    color: #fff;
+}
+
+.nav-btn {
+    padding: 13px 25px;
+    border: 1px solid rgba(255, 255, 255, .2);
+    border-radius: 30px;
+    font-size: 12px;
+    transition: .3s;
+}
+
+.nav-btn:hover {
+    background: var(--red);
+    border-color: var(--red);
+}
+
+.menu-btn {
+    display: none;
+    border: none;
+    background: transparent;
+    color: #fff;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.hero {
+    width: min(1250px, 92%);
+    min-height: 100vh;
+    margin: auto;
+    padding-top: 125px;
+    padding-bottom: 70px;
+
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 390px;
+
+    align-items: start;
+    gap: 80px;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 10;
+}
+
+.small-title {
+    color: #f30612;
+    font-size: 18px;
+    font-weight: 700;
+    letter-spacing: 6px;
+    margin-bottom: 10px;
+}
+
+
+.hero h1 {
+    font-size: clamp(65px, 8vw, 105px);
+    line-height: .88;
+    letter-spacing: -6px;
+    font-weight: 800;
+}
+
+.hero h1 span {
+    color: var(--red);
+}
+
+.typing-box {
+    margin-top: 28px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 14px;
+    letter-spacing: 2px;
+}
+
+.typing-box span:first-child {
+    color: #777;
+}
+
+#typing {
+    color: #fff;
+    font-weight: 600;
+}
+
+.hero-text {
+    max-width: 580px;
+    margin-top: 24px;
+    color: #999;
+    font-size: 16px;
+    line-height: 1.8;
+}
+
+.hero-text strong {
+    color: #ddd;
+}
+
+.availability {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    margin-top: 18px;
+    color: #aaa;
+    font-size: 11px;
+    letter-spacing: 1px;
+}
+
+.availability-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #55d879;
+    box-shadow: 0 0 12px rgba(85, 216, 121, .8);
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 14px;
+    margin-top: 32px;
+}
+
+.primary-btn,
+.secondary-btn {
+    padding: 15px 24px;
+    border-radius: 30px;
+    font-size: 12px;
+    transition: .3s;
+}
+
+.primary-btn {
+    background: var(--red);
+}
+
+.primary-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 35px rgba(237, 28, 46, .25);
+}
+
+.secondary-btn {
+    border: 1px solid rgba(255, 255, 255, .18);
+    color: #ddd;
+}
+
+.secondary-btn:hover {
+    background: #fff;
+    color: #000;
+}
+
+
+/* =========================================================
+   SOCIAL
+========================================================= */
+
+.social-links {
+    display: flex;
+    gap: 12px;
+    margin-top: 35px;
+}
+
+.social-links a {
+    width: 42px;
+    height: 42px;
+    border: 1px solid rgba(255, 255, 255, .14);
+    border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: #aaa;
+
+    background: rgba(255, 255, 255, .02);
+    transition: .3s;
+}
+
+.social-links a:hover {
+    color: #fff;
+    border-color: var(--red);
+    background: rgba(237, 28, 46, .12);
+    transform: translateY(-4px);
+}
+
+
+/* =========================================================
+   CREATIVE CARD
+========================================================= */
+
+.hero-card {
+    position: relative;
+
+    width: 390px;
+    height: 560px;
+
+    overflow: hidden;
+    border-radius: 28px;
+
+    background:
+        radial-gradient(
+            circle at 70% 18%,
+            rgba(237, 28, 46, .35),
+            transparent 34%
+        ),
+        linear-gradient(
+            145deg,
+            #191919 0%,
+            #0d0d0d 55%,
+            #080808 100%
+        );
+
+    border: 1px solid rgba(255, 255, 255, .13);
+
+    box-shadow:
+        0 30px 90px rgba(0, 0, 0, .55);
+
+    isolation: isolate;
+    transition: .5s;
+}
+
+.hero-card:hover {
+    transform: translateY(-7px);
+    border-color: rgba(237, 28, 46, .4);
+}
+
+
+/* =========================================================
+   CARD GRID
+========================================================= */
+
+.mind-grid {
+    position: absolute;
+    inset: 0;
+
+    background-image:
+        linear-gradient(
+            rgba(255, 255, 255, .035) 1px,
+            transparent 1px
+        ),
+        linear-gradient(
+            90deg,
+            rgba(255, 255, 255, .035) 1px,
+            transparent 1px
+        );
+
+    background-size: 32px 32px;
+    opacity: .85;
+    z-index: 1;
+}
+
+
+/* =========================================================
+   RED GLOW
+========================================================= */
+
+.mind-red-glow {
+    position: absolute;
+
+    width: 330px;
+    height: 330px;
+
+    right: -110px;
+    top: -100px;
+
+    border-radius: 50%;
+
+    background: var(--red);
+
+    filter: blur(95px);
+    opacity: .3;
+
+    z-index: 2;
+
+    animation: redGlow 5s ease-in-out infinite alternate;
+}
+
+@keyframes redGlow {
+    from {
+        transform: scale(.85);
+        opacity: .22;
+    }
+
+    to {
+        transform: scale(1.15);
+        opacity: .4;
+    }
+}
+
+
+/* =========================================================
+   CARD TOP
+========================================================= */
+
+.mind-top {
+    position: absolute;
+
+    top: 27px;
+    left: 30px;
+    right: 30px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    z-index: 20;
+}
+
+.mind-top span {
+    color: #aaa;
+    font-size: 11px;
+    letter-spacing: 3px;
+}
+
+.mind-status {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+
+    background: #55d879;
+
+    box-shadow:
+        0 0 12px rgba(85, 216, 121, .8);
+}
+
+
+/* =========================================================
+   CREATIVE THINKING
+========================================================= */
+
+.idea-ui {
+    position: absolute;
+
+    top: 108px;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    padding: 13px 25px;
+
+    border: 1px solid rgba(255, 255, 255, .2);
+    border-radius: 30px;
+
+    background: rgba(255, 255, 255, .04);
+    backdrop-filter: blur(10px);
+
+    color: #ddd;
+
+    font-size: 11px;
+    letter-spacing: 2px;
+
+    white-space: nowrap;
+
+    z-index: 25;
+
+    text-align: center;
+}
+
+
+/* =========================================================
+   SVG CONNECTION SYSTEM
+========================================================= */
+
+.brain-connections {
+    position: absolute;
+
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    pointer-events: none;
+
+    z-index: 5;
+
+    overflow: visible;
+
+    /* Brain ke saath lines bhi upar */
+    transform: translateY(-37px);
+}
+
+.connection-line {
+    fill: none;
+
+    stroke: rgba(255, 255, 255, .42);
+
+    stroke-width: 1.2;
+
+    stroke-linecap: round;
+
+    stroke-dasharray: 5 7;
+
+    filter:
+        drop-shadow(
+            0 0 4px rgba(237, 28, 46, .65)
+        );
+
+    animation:
+        brainConnection 3s linear infinite;
+}
+
+.line-thinking {
+    stroke: rgba(237, 28, 46, .75);
+    stroke-width: 1.5;
+}
+
+.line-ai,
+.line-web,
+.line-design,
+.line-code {
+    stroke: rgba(255, 255, 255, .42);
+}
+
+@keyframes brainConnection {
+    0% {
+        stroke-dashoffset: 0;
+        opacity: .25;
+    }
+
+    50% {
+        opacity: .85;
+    }
+
+    100% {
+        stroke-dashoffset: -40;
+        opacity: .25;
+    }
+}
+
+
+/* =========================================================
+   BRAIN — MOVED UP
+========================================================= */
+
+.creative-brain {
+    position: absolute;
+
+    width: 250px;
+    height: 205px;
+
+    left: 50%;
+
+    /* OLD: 202px
+       NEW: 165px
+       Brain 37px ऊपर */
+    top: 165px;
+
+    transform: translateX(-50%);
+
+    z-index: 8;
+    margin: 0;
+}
+
+.brain-outline {
+    position: absolute;
+    inset: 7px;
+
+    border: 1px solid rgba(255, 255, 255, .45);
+
+    border-radius:
+        50% 50% 47% 53% /
+        53% 47% 53% 47%;
+
+    background:
+        radial-gradient(
+            circle at center,
+            rgba(237, 28, 46, .34),
+            rgba(10, 10, 10, .08) 68%
+        );
+
+    box-shadow:
+        inset 0 0 40px rgba(237, 28, 46, .18),
+        0 0 40px rgba(237, 28, 46, .14);
+}
+
+.brain-divider {
+    position: absolute;
+
+    width: 2px;
+    height: 145px;
+
+    left: 50%;
+    top: 30px;
+
+    transform: translateX(-50%);
+
+    background:
+        linear-gradient(
+            transparent,
+            rgba(255, 255, 255, .5),
+            transparent
+        );
+}
+
+.brain-curve {
+    position: absolute;
+
+    border: 1px solid rgba(255, 255, 255, .32);
+
+    border-radius: 50%;
+}
+
+.curve-one {
+    width: 80px;
+    height: 48px;
+
+    left: 32px;
+    top: 42px;
+
+    transform: rotate(-18deg);
+}
+
+.curve-two {
+    width: 75px;
+    height: 45px;
+
+    left: 37px;
+    top: 90px;
+
+    transform: rotate(12deg);
+}
+
+.curve-three {
+    width: 80px;
+    height: 48px;
+
+    right: 32px;
+    top: 42px;
+
+    transform: rotate(18deg);
+}
+
+.curve-four {
+    width: 75px;
+    height: 45px;
+
+    right: 37px;
+    top: 90px;
+
+    transform: rotate(-12deg);
+}
+
+
+/* =========================================================
+   BRAIN NODES
+========================================================= */
+
+.brain-node {
+    position: absolute;
+
+    width: 8px;
+    height: 8px;
+
+    border-radius: 50%;
+
+    background: #fff;
+
+    box-shadow:
+        0 0 8px #fff,
+        0 0 18px var(--red);
+
+    z-index: 10;
+}
+
+.node-1 {
+    left: 52px;
+    top: 62px;
+}
+
+.node-2 {
+    left: 82px;
+    top: 98px;
+}
+
+.node-3 {
+    left: 52px;
+    top: 135px;
+}
+
+.node-4 {
+    left: 96px;
+    top: 150px;
+}
+
+.node-5 {
+    right: 52px;
+    top: 62px;
+}
+
+.node-6 {
+    right: 82px;
+    top: 98px;
+}
+
+.node-7 {
+    right: 52px;
+    top: 135px;
+}
+
+.node-8 {
+    right: 96px;
+    top: 150px;
+}
+
+
+/* =========================================================
+   SKILL TAGS — MOVED UP
+========================================================= */
+
+.idea-tag {
+    position: absolute;
+
+    padding: 10px 18px;
+
+    border-radius: 25px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(20, 20, 20, .96),
+            rgba(8, 8, 8, .96)
+        );
+
+    border: 1px solid rgba(255, 255, 255, .20);
+
+    color: #ddd;
+
+    font-size: 10px;
+    letter-spacing: 1.5px;
+
+    white-space: nowrap;
+
+    backdrop-filter: blur(10px);
+
+    box-shadow:
+        0 0 20px rgba(237, 28, 46, .08);
+
+    z-index: 15;
+
+    transition:
+        transform .3s ease,
+        border-color .3s ease,
+        box-shadow .3s ease;
+}
+
+.idea-tag:hover {
+    transform:
+        translateY(-4px)
+        scale(1.04);
+
+    border-color:
+        rgba(237, 28, 46, .7);
+
+    box-shadow:
+        0 0 25px rgba(237, 28, 46, .25);
+}
+
+
+/* =========================================================
+   LEFT SIDE TAGS
+========================================================= */
+
+.idea-ai {
+    top: 238px;
+    left: 22px;
+}
+
+.idea-design {
+    top: 373px;
+    left: 22px;
+}
+
+
+/* =========================================================
+   RIGHT SIDE TAGS
+========================================================= */
+
+.idea-web {
+    top: 238px;
+    right: 22px;
+}
+
+.idea-code {
+    top: 373px;
+    right: 22px;
+}
+
+
+/* =========================================================
+   OLD NEURAL LINES OFF
+========================================================= */
+
+.neural-line {
+    display: none !important;
+}
+
+
+/* =========================================================
+   CARD BOTTOM
+========================================================= */
+
+.mind-content {
+    position: absolute;
+
+    left: 30px;
+    right: 30px;
+
+    bottom: 35px;
+
+    z-index: 20;
+}
+
+.mind-content h2 {
+    margin: 0;
+
+    max-width: 320px;
+
+    color: #fff;
+
+    font-size: 46px;
+
+    line-height: .9;
+
+    letter-spacing: -2.8px;
+
+    font-weight: 800;
+}
+
+.mind-content h2 span {
+    display: block;
+
+    color: var(--red);
+
+    margin-top: 4px;
+}
+
+
+/* =========================================================
+   MARQUEE
+========================================================= */
+
+.marquee {
+    width: 100%;
+    overflow: hidden;
+
+    border-top:
+        1px solid rgba(255, 255, 255, .08);
+
+    border-bottom:
+        1px solid rgba(255, 255, 255, .08);
+
+    padding: 20px 0;
+
+    background: #0b0b0b;
+}
+
+.marquee-track {
+    width: max-content;
+
+    display: flex;
+    align-items: center;
+
+    gap: 30px;
+
+    animation:
+        marquee 22s linear infinite;
+}
+
+.marquee span {
+    color: #aaa;
+    font-size: 12px;
+    letter-spacing: 3px;
+}
+
+.marquee b {
+    color: var(--red);
+}
+
+@keyframes marquee {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-50%);
+    }
+}
+
+
+/* =========================================================
+   GENERAL SECTIONS
+========================================================= */
+
+.section {
+    width: min(1200px, 92%);
+    margin: auto;
+    padding: 95px 0;
+}
+
+.section-label {
+    color: var(--red);
+    font-size: 10px;
+    letter-spacing: 4px;
+    margin-bottom: 18px;
+}
+
+.section-title {
+    font-size: clamp(42px, 5.5vw, 70px);
+    line-height: .95;
+    letter-spacing: -3px;
+    margin-bottom: 45px;
+}
+
+.section-title span {
+    color: var(--red);
+}
+
+
+/* =========================================================
+   ABOUT
+========================================================= */
+
+.about-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: start;
+}
+
+.about-text p {
+    color: #999;
+    line-height: 1.85;
+    margin-bottom: 18px;
+    font-size: 15px;
+}
+
+.about-highlights {
+    margin-top: 30px;
+    display: grid;
+    gap: 12px;
+}
+
+.highlight {
+    padding: 15px 18px;
+
+    border-left:
+        2px solid var(--red);
+
+    background:
+        rgba(237, 28, 46, .04);
+}
+
+.highlight span {
+    display: block;
+    color: #777;
+    font-size: 9px;
+    letter-spacing: 2px;
+    margin-bottom: 5px;
+}
+
+.highlight strong {
+    color: #fff;
+    font-size: 13px;
+}
+
+.skills {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.skill {
+    position: relative;
+}
+
+.skill > span {
+    color: #ddd;
+    font-size: 12px;
+}
+
+.skill > b {
+    float: right;
+    color: #777;
+    font-size: 11px;
+}
+
+.skill-line {
+    height: 2px;
+    margin-top: 10px;
+    background: #222;
+    overflow: hidden;
+}
+
+.skill-line i {
+    display: block;
+    height: 100%;
+    background: var(--red);
+}
+
+
+/* =========================================================
+   STATS
+========================================================= */
+
+.stats {
+    margin-top: 70px;
+
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+
+    border-top:
+        1px solid rgba(255, 255, 255, .1);
+
+    border-bottom:
+        1px solid rgba(255, 255, 255, .1);
+}
+
+.stat {
+    padding: 30px 20px;
+
+    border-right:
+        1px solid rgba(255, 255, 255, .1);
+
+    text-align: center;
+}
+
+.stat:last-child {
+    border-right: none;
+}
+
+.stat strong {
+    display: block;
+    font-size: 40px;
+    margin-bottom: 8px;
+}
+
+.stat span {
+    color: #777;
+    font-size: 9px;
+    letter-spacing: 2px;
+}
+
+
+/* =========================================================
+   PROJECTS
+========================================================= */
+
+.projects {
+    padding-top: 90px;
+    padding-bottom: 90px;
+}
+
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.project-card {
+    overflow: hidden;
+
+    border:
+        1px solid rgba(255, 255, 255, .1);
+
+    background: #101010;
+
+    transition: .4s;
+}
+
+.project-card:hover {
+    transform: translateY(-7px);
+
+    border-color:
+        rgba(237, 28, 46, .45);
+}
+
+.project-image {
+    height: 210px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(237, 28, 46, .25),
+            transparent 60%
+        );
+
+    border-bottom:
+        1px solid rgba(255, 255, 255, .08);
+}
+
+.project-image span {
+    font-size: 34px;
+    font-weight: 800;
+    letter-spacing: 4px;
+}
+
+.project-two {
+    background:
+        radial-gradient(
+            circle,
+            rgba(255, 255, 255, .12),
+            transparent 60%
+        );
+}
+
+.project-three {
+    background:
+        radial-gradient(
+            circle,
+            rgba(237, 28, 46, .18),
+            transparent 60%
+        );
+}
+
+.project-info {
+    padding: 24px;
+}
+
+.project-top {
+    display: flex;
+    justify-content: space-between;
+
+    color: #666;
+    font-size: 9px;
+    letter-spacing: 2px;
+}
+
+.project-info h3 {
+    margin: 16px 0 10px;
+    font-size: 21px;
+}
+
+.project-info p {
+    color: #777;
+    font-size: 13px;
+    line-height: 1.7;
+}
+
+.tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 7px;
+    margin-top: 18px;
+}
+
+.tags span {
+    padding: 6px 9px;
+
+    border:
+        1px solid rgba(255, 255, 255, .1);
+
+    color: #888;
+    font-size: 9px;
+}
+
+
+/* =========================================================
+   SERVICES
+========================================================= */
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.service {
+    padding: 30px;
+    min-height: 240px;
+
+    border:
+        1px solid rgba(255, 255, 255, .1);
+
+    background: #101010;
+
+    transition: .4s;
+}
+
+.service:hover {
+    border-color:
+        rgba(237, 28, 46, .4);
+
+    transform: translateY(-6px);
+}
+
+.service-number {
+    color: var(--red);
+    font-size: 10px;
+    letter-spacing: 2px;
+    margin-bottom: 45px;
+}
+
+.service h3 {
+    font-size: 22px;
+    margin-bottom: 13px;
+}
+
+.service p {
+    color: #777;
+    font-size: 13px;
+    line-height: 1.75;
+}
+
+
+/* =========================================================
+   CONTACT
+========================================================= */
+
+.contact {
+    padding-top: 90px;
+    padding-bottom: 90px;
+}
+
+.contact-intro {
+    color: #777;
+    max-width: 600px;
+    line-height: 1.7;
+
+    margin-top: -25px;
+    margin-bottom: 30px;
+}
+
+#contactForm {
+    max-width: 850px;
+}
+
+.input-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+#contactForm input,
+#contactForm textarea {
+    width: 100%;
+
+    padding: 17px;
+
+    background: #101010;
+
+    border:
+        1px solid rgba(255, 255, 255, .1);
+
+    color: #fff;
+
+    outline: none;
+
+    margin-bottom: 15px;
+
+    resize: vertical;
+
+    transition: .3s;
+}
+
+#contactForm input::placeholder,
+#contactForm textarea::placeholder {
+    color: #666;
+}
+
+#contactForm input:focus,
+#contactForm textarea:focus {
+    border-color:
+        rgba(237, 28, 46, .6);
+
+    box-shadow:
+        0 0 0 3px rgba(237, 28, 46, .06);
+}
+
+#contactForm textarea {
+    min-height: 160px;
+}
+
+#contactForm button {
+    padding: 15px 25px;
+
+    border: none;
+    border-radius: 30px;
+
+    background: var(--red);
+
+    color: #fff;
+
+    cursor: pointer;
+
+    font-size: 12px;
+
+    transition: .3s;
+}
+
+#contactForm button:hover {
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 12px 30px rgba(237, 28, 46, .25);
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+footer {
+    padding: 45px 5%;
+
+    border-top:
+        1px solid rgba(255, 255, 255, .08);
+
+    text-align: center;
+}
+
+.footer-logo {
+    font-size: 25px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    margin-bottom: 18px;
+}
+
+.footer-social {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    margin-bottom: 18px;
+}
+
+.footer-social a {
+    color: #777;
+    font-size: 12px;
+    transition: .3s;
+}
+
+.footer-social a:hover {
+    color: var(--red);
+}
+
+footer p {
+    color: #666;
+    font-size: 10px;
+    letter-spacing: 2px;
+    margin-top: 8px;
+}
+
+
+/* =========================================================
+   SCROLL ANIMATION
+========================================================= */
+
+.hidden {
+    opacity: 0;
+    transform: translateY(25px);
+
+    transition:
+        opacity .7s ease,
+        transform .7s ease;
+}
+
+.hidden.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1000px) {
+
+    .hero {
+        grid-template-columns: 1fr;
+        gap: 60px;
+        padding-top: 120px;
+    }
+
+    .hero-card {
+        width: 390px;
+        max-width: 100%;
+        margin: auto;
+    }
+
+    .about-content {
+        grid-template-columns: 1fr;
+        gap: 50px;
+    }
+
+    .project-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .services-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 700px) {
+
+    .navbar {
+        height: 70px;
+    }
+
+    .nav-links,
+    .nav-btn {
+        display: none;
+    }
+
+    .menu-btn {
+        display: block;
+    }
+
+    .hero {
+        width: 90%;
+        padding-top: 105px;
+        padding-bottom: 55px;
+        gap: 50px;
+    }
+
+    .hero h1 {
+        font-size: 62px;
+        letter-spacing: -4px;
+    }
+
+    .hero-text {
+        font-size: 14px;
+    }
+
+    .hero-buttons {
+        flex-wrap: wrap;
+    }
+
+    .social-links {
+        margin-top: 28px;
+    }
+
+    .hero-card {
+        height: 550px;
+        width: 100%;
+        max-width: 390px;
+    }
+
+
+    /* =====================================================
+       MOBILE BRAIN — MOVED UP
+    ===================================================== */
+
+    .creative-brain {
+        top: 153px;
+        left: 50%;
+
+        transform:
+            translateX(-50%)
+            scale(.88);
+
+        transform-origin: center center;
+    }
+
+    .brain-connections {
+        transform: translateY(-37px);
+    }
+
+
+    /* Creative Thinking */
+    .idea-ui {
+        left: 50%;
+        top: 98px;
+        transform: translateX(-50%);
+    }
+
+
+    /* Mobile AI */
+    .idea-ai {
+        left: 14px;
+        top: 218px;
+    }
+
+
+    /* Mobile WEB */
+    .idea-web {
+        right: 14px;
+        top: 218px;
+    }
+
+
+    /* Mobile DESIGN */
+    .idea-design {
+        left: 14px;
+        top: 343px;
+    }
+
+
+    /* Mobile CODE */
+    .idea-code {
+        right: 14px;
+        top: 343px;
+    }
+
+
+    .section {
+        padding: 75px 0;
+    }
+
+    .section-title {
+        font-size: 46px;
+        letter-spacing: -2px;
+        margin-bottom: 35px;
+    }
+
+    .project-grid,
+    .services-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .stats {
+        grid-template-columns: 1fr 1fr;
+        margin-top: 55px;
+    }
+
+    .stat {
+        border-bottom:
+            1px solid rgba(255, 255, 255, .1);
+    }
+
+    .input-row {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 450px) {
+
+    .hero h1 {
+        font-size: 53px;
+    }
+
+    .hero-card {
+        height: 535px;
+        border-radius: 20px;
+    }
+
+    .mind-top {
+        top: 24px;
+        left: 24px;
+        right: 24px;
+    }
+
+    .idea-ui {
+        top: 94px;
+        font-size: 9px;
+        padding: 11px 18px;
+    }
+
+
+    /* =====================================================
+       SMALL MOBILE BRAIN — MOVED UP
+    ===================================================== */
+
+    .creative-brain {
+        top: 143px;
+        left: 50%;
+
+        transform:
+            translateX(-50%)
+            scale(.76);
+
+        transform-origin: center center;
+    }
+
+    .brain-connections {
+        transform: translateY(-37px);
+    }
+
+
+    /* Small mobile AI */
+    .idea-ai {
+        left: 12px;
+        top: 208px;
+    }
+
+
+    /* Small mobile WEB */
+    .idea-web {
+        right: 12px;
+        top: 208px;
+    }
+
+
+    /* Small mobile DESIGN */
+    .idea-design {
+        left: 12px;
+        top: 328px;
+    }
+
+
+    /* Small mobile CODE */
+    .idea-code {
+        right: 12px;
+        top: 328px;
+    }
+
+
+    .mind-content {
+        left: 24px;
+        right: 24px;
+        bottom: 28px;
+    }
+
+    .mind-content h2 {
+        font-size: 38px;
+    }
+
+    .stats {
+        grid-template-columns: 1fr;
+    }
+
+    .stat {
+        border-right: none;
+    }
+}
+
+
+/* =========================================================
+   TOUCH DEVICES
+========================================================= */
+
+@media (hover: none) {
+
+    .cursor-glow {
+        display: none;
+    }
+
+    .hero-card:hover,
+    .project-card:hover,
+    .service:hover,
+    .primary-btn:hover,
+    .nav-btn:hover,
+    .social-links a:hover {
+        transform: none;
+    }
+}
